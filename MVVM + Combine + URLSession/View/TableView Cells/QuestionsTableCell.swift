@@ -31,6 +31,8 @@ class QuestionsTableCell: ReusableTableViewCell {
         self.ownerName.text = data.owner?.displayName
         self.reputation.text = data.owner?.ownerReputations()
         self.tagsLbl.text = data.questionTags()
-        self.OwnerImage.image = data.owner?.getProfileImage()
+        if data.owner?.profileImage != nil {
+            self.OwnerImage.image = data.owner?.getProfileImage()
+        }
     }
 }
